@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="Author" content="onaway">
+    <title>赛事中心</title>
+    <script>
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+                window.location.href="isMobile.html";
+            }
+        }
+        browserRedirect();
+    </script>
+    <script type="text/javascript">
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = clientWidth / 7.5 + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/video.css">
+    <link rel="stylesheet" href="./css/mescroll.min.css">
+    <script src="js/3.2.1-jquery.js"></script>
+    <script src="js/mescroll.min.js"></script>
+</head>
+<body>
+    <div class="wrap clearfix">
+        <div class="left"></div>
+        <div class="right">
+            <div class="top-nav">
+                <ul>
+                    <li class="on">极限竞技赛</li>
+                    <li>敬请期待</li>
+                    <li>敬请期待</li>
+                </ul>
+            </div>
+            <div class="video-title">
+                <span>特约主播</span><span>玩家风采</span>
+            </div>
+            <div class="video-list">
+                <div id="anchor" class="anchor slide mescroll">
+                    <ul id="anchorList" class="clearfix">
+                        <!-- <li>
+                            <a href="" class="video-area">
+                                <div class="pic"><img src="img/2.jpg" width="100%" height="100%" alt=""></div>
+                                <div class="v-dec">
+                                    <p>无敌美少女主播今日三国战纪极限竞技赛首秀，抗压如何反杀对手，精彩至极！</p>
+                                    <div class="time">
+                                        <span>1月30日</span>
+                                        <span>11:47</span>
+                                        <span>219人看过</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+                <div id="player" class="player slide mescroll">
+                    <ul id="playerList" class="clearfix">
+                        <!-- <li>
+                            <a href="" class="video-area">
+                                <div class="pic"><img src="img/1.jpg" width="100%" height="100%" alt=""></div>
+                                <div class="v-dec">
+                                    <p>无敌美少女主播今日三国战纪极限竞技赛首秀，抗压如何反杀对手，精彩至极！</p>
+                                    <div class="time">
+                                        <span>1月30日</span>
+                                        <span>11:47</span>
+                                        <span>219人看过</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <ul>
+            <li><a href="index.html"><h2>资讯</h2><span>INDEX</span></a></li>
+            <li class="on"><a href="video.html"><h2>视频</h2><span>VIDEO</span></a></li>
+            <li><a href="match.html"><h2>赛事</h2><span>MATCH</span></a></li>
+        </ul>
+    </footer>
+    
+    <script>
+        //UC浏览器全部显示给的高度
+        $(function(){
+            window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function() { 
+                if (window.orientation === 180 || window.orientation === 0) {  
+                //    alert('竖屏状态！');
+                if(navigator.userAgent.indexOf('UCBrowser') > -1) {
+                        var $list = $('.video-list');
+                        $list.css('height','90%');
+                    } 
+                }  
+                if (window.orientation === 90 || window.orientation === -90 ){  
+                    // alert('横屏状态！'); 
+                }   
+            }, false);
+        })
+
+        //视频列表获取
+        $(function(){
+        
+            //主播视频和玩家视频的切换
+            var $title = $('.video-title'),
+                $spa = $title.find('span'),
+                $list = $('.video-list'),
+                $slide = $list.find('.slide');
+            
+            $spa.eq(0).addClass('on');
+            $slide.eq(0).show();
+
+            $spa.on('click',function(){
+                var index = $(this).index();
+                $spa.eq(index).addClass('on').siblings().removeClass('on');
+                $slide.eq(index).show().siblings().hide();
+                if( index == 1 ){
+                    getData('player','playerList',playerUrl,'player');
+                }
+            })
+
+            var $anchorUl = $('.video-list .anchor > ul');
+            var $playerUl = $('.video-list .player > ul');
+            var anchorUrl = 'http://120.132.14.186:9002/index.php/Home/index/getanchorlist';
+            var playerUrl = 'http://120.132.14.186:9002/index.php/Home/index/getplayerlist';
+            
+            function getData(obj1,obj2,url,type){        //obj1为class=mescroll元素的id名 ，obj2为obj1下的ul的id，url为相应的接口
+                var meScroll = new MeScroll(obj1, {           //第一个参数"mescroll"对应上面布局结构div的id
+                    down:{
+                        use: false,                  //是否启用下拉刷新
+                        auto: false                  //是否在初始化完毕之后自动执行下拉回调callback; 默认true
+                    },
+                    
+                    up: {
+                        auto: true,                        //是否初始化上拉加载，默认true
+                        callback: getListData,            //上拉加载回调,简写callback:function(page){upCallback(page);}
+                        isBounce: false,                //此处禁止ios回弹,解析
+                        noMoreSize: 1,          //如果列表已无数据,可设置列表的总数量要大于半页才显示无更多数据;避免列表数据过少(比如只有一条数据),显示无更多数据会不好看; 默认5
+                        offset: 100,            //离底部的距离
+                        empty: {
+                            warpId:null,                 //父布局的id; 如果此项有值,将不使用clearEmptyId的值;
+                            icon: "",                    //图标,默认null
+                            tip: "暂无数据",              //提示
+                            btntext: "去逛逛 >",          //按钮,默认""
+                            btnClick: function(){}        //点击按钮的回调,默认null
+                        },
+                        page: {
+                            num: 0,             //当前页 默认0,回调之前会加1; 即callback(page)会从1开始
+                            size: 12,            //每页数据条数
+                            time: null          //加载第一页数据服务器返回的时间; 防止用户翻页时,后台新增了数据从而导致下一页数据重复;
+                        },
+                        clearEmptyId: obj2,           //相当于同时设置了clearId和empty.warpId; 简化写法,默认null;
+                        hardwareClass: "mescroll-hardware",     //硬件加速样式,动画更流畅
+                        htmlLoading: '<p class="upwarp-progress mescroll-rotate"></p><p class="upwarp-tip"> 加载中..</p>', //上拉加载中的布局
+                        htmlNodata: '<p class="upwarp-nodata">没有更多的视频了</p>',    //无数据的布局
+                    }
+                });   
+
+                function getListData(page){
+
+                    getListDataFromNet(page.num,page.size, function(curPageData){
+                        //联网成功的回调,隐藏下拉刷新和上拉加载的状态;
+                        //mescroll会根据传的参数,自动判断列表如果无任何数据,则提示空;列表无下一页数据,则提示无更多数据;
+                        // console.log("page.num="+page.num+", page.size="+page.size+", data.length="+data.length);
+
+                        //方法一(推荐): 后台接口有返回列表的总页数 totalPage
+                        var totalSize = curPageData[12];
+                        
+                        // var totalPage = Math.ceil(curPageData[5]/5);
+                        meScroll.endByPage(curPageData.length-1, totalSize); //必传参数(当前页的数据个数, 总数据量)
+                        
+                        //设置列表数据
+                        setListData(curPageData);
+                    },function(){
+                        //联网失败的回调,隐藏下拉刷新和上拉加载的状态;
+                        meScroll.endErr();
+                    })  
+                }
+
+                /*设置列表数据*/
+                function setListData(data){
+                    var result = '';
+                    var $list = $("#"+obj2+"");
+                    
+                    for (var i = 0; i < data.length; i++) {
+                        var dayArr = [],
+                            hourArr = [];
+                        for( var k=0; k< data.length-1; k++ ){
+                            var time = data[k].time;
+                                tempArr = time.split(' '),
+                                dayArray = tempArr[0].split('-'),
+                                day = dayArray[1] + '/' + dayArray[2];
+                            dayArr.push(day);
+                            
+                            var hourArray = tempArr[1].split(':'),
+                                hour = hourArray[0] + ':' + hourArray[1];
+                            hourArr.push(hour);
+                        }
+
+                        var length = data.length-1;
+                        for( var i=0; i<length; i++ ){
+                            var str = "play.html?type="+type+"&id="+data[i].id+"";
+                            result += '<li>\
+                                <a href="'+str+'" class="video-area">\
+                                    <div class="pic"><img src="http://120.132.14.186:9002'+data[i].img+'" width="100%" height="100%" alt=""></div>\
+                                    <div class="v-dec">\
+                                        <p>'+data[i].desc+'</p>\
+                                        <div class="time">\
+                                            <span>'+dayArr[i]+'</span>\
+                                            <span>'+hourArr[i]+'</span>\
+                                            <span>'+data[i].look+'人看过</span>\
+                                        </div>\
+                                    </div>\
+                                </a>\
+                            </li>';
+                        }
+                        $list.append(result);
+                    }
+                }
+
+                function getListDataFromNet(pageNum,pageSize,successCallback,errorCallback) {
+                    //延时一秒,模拟联网
+                    setTimeout(function () {
+                        $.ajax({
+                            type: 'GET',
+                            url:''+url+'?num='+pageNum+'&size='+pageSize,
+                            dataType: 'json',
+                            success: function(data){
+                                
+                                //回调
+                                successCallback(data);
+                            },
+                            error: errorCallback
+                        });
+                    },300)
+                }
+            }
+
+            getData('anchor','anchorList',anchorUrl,'anchor');
+        });
+    </script>
+</body>
+</html>

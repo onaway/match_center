@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="Author" content="onaway">
+    <title>赛事中心</title>
+    <script>
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+                window.location.href="isMobile.html";
+            }
+        }
+        browserRedirect();
+    </script>
+    <script type="text/javascript">
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = clientWidth / 7.5 + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    
+    <link rel="stylesheet" href="./css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/match.css">
+    <script src="js/3.2.1-jquery.js"></script>
+    <script src="js/swiper-3.4.2.min.js"></script>
+</head>
+<body>
+    <div class="wrap clearfix">
+        <div class="left"></div>
+        <div class="right">
+            <div class="top-nav">
+                <ul>
+                    <li><i></i><span>赛程</span></li>
+                    <li><i></i><span>赛事奖励</span></li>
+                </ul>
+            </div>
+            <div class="match">
+                <div class="schedule main">
+                    <!-- <div class="match-title">
+                        <span>积分赛</span>
+                        <span>复赛</span>
+                        <span>决赛</span>
+                    </div> -->
+                    <div class="tab">
+                        <p>预选赛</p>
+                        <p>决赛</p>
+                    </div>
+                    <div class="container swiper-container">
+                        <div class="swiper-wrapper c-nav clearfix">
+                            <div class="swiper-slide preliminaries">
+                                <div class="content">
+                                    <div class="rule">
+                                        <p>活动规则：</p>
+                                        <p>1、玩家之间1VS1进行对战，美味玩家可选3名武将进行出站。</p>
+                                        <p>2、角色属性将不带入比赛，无属性PK,纯操作竞技。</p>
+                                        <p>3、匹配到对手后双方会进入选将界面，在选将事件内两个玩家分别选择自己的三个武将，两个玩家可选同样的武将，选将时间结束玩家没选完的真伪会随机选择武将。</p>
+                                        <p>4、赛季时间内每天晚上21:00-22:00进行比赛，美味玩家限定参加次数10次，如当天未使用完次数将会累计至第二天，累计次数上限50次。</p>
+                                        <p>5、在规定时间内一方所有武将死亡为失败，如果在规定时间没有一方所有武将都死亡，则按照双方武将剩余总血量判定，总血量多的为胜方。如果在战斗中有一方中途掉线，则直接判定另一方获胜。</p>
+                                        <p>6、玩家出世积分为0积分，战斗胜利+10积分，失败-5积分。</p>
+                                        <p>7、全平台排名，积分排名显示前100名玩家名单。</p>
+                                    </div>
+
+                                    <nav class="competition-list">
+                                        <ul class="c-l-nav">
+                                            <!-- <li>
+                                                <div class="c-left">
+                                                    <span>12-23</span>
+                                                    <h2>15:00</h2>
+                                                </div>
+                                                <div class="c-right">
+                                                    <ul class="c-r-nav">
+                                                        <li>萌妞嘎嘎</li>
+                                                        <li> <span>0</span> : <span>0</span> </li>
+                                                        <li>高手寂寞</li>
+                                                        <li><span>即将开始</span></li>
+                                                    </ul>
+                                                </div>
+                                            </li> -->
+                                        </ul>
+                                    </nav>
+                                </div>
+
+                                <div class="score">
+                                    <h1>赛事积分</h1>
+                                    <div class="s-con">
+                                        <p>
+                                            <span></span>
+                                            <span>选手</span>
+                                            <span>区服</span>
+                                            <span>积分</span>
+                                            <span>最擅长武将</span>
+                                        </p>
+                                        <nav class="ranking-list">
+                                            <ul>
+                                                <!-- <li>
+                                                    <span>1</span>
+                                                    <span><em class="first">流浪的小青蛙</em></span>
+                                                    <span>342区白露为霜</span>
+                                                    <span>99999</span>
+                                                    <img src="img/head/zhaoyun.png" alt="">
+                                                </li> -->
+                                            </ul>
+                                        </nav> 
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-slide finals">
+                                <div class="content">
+                                    <div class="rule">
+                                        <p>活动规则：</p>
+                                        <p>1、玩家之间1VS1进行对战，美味玩家可选3名武将进行出站。</p>
+                                        <p>2、角色属性将不带入比赛，无属性PK,纯操作竞技。</p>
+                                        <p>3、匹配到对手后双方会进入选将界面，在选将事件内两个玩家分别选择自己的三个武将，两个玩家可选同样的武将，选将时间结束玩家没选完的真伪会随机选择武将。</p>
+                                        <p>4、赛季时间内每天晚上21:00-22:00进行比赛，美味玩家限定参加次数10次，如当天未使用完次数将会累计至第二天，累计次数上限50次。</p>
+                                        <p>5、在规定时间内一方所有武将死亡为失败，如果在规定时间没有一方所有武将都死亡，则按照双方武将剩余总血量判定，总血量多的为胜方。如果在战斗中有一方中途掉线，则直接判定另一方获胜。</p>
+                                        <p>6、玩家出世积分为0积分，战斗胜利+10积分，失败-5积分。</p>
+                                        <p>7、全平台排名，积分排名显示前100名玩家名单。</p>
+                                    </div>
+
+                                    <nav class="competition-list">
+                                        <ul class="c-l-nav">
+                                            <!-- <li>
+                                                <div class="c-left">
+                                                    <span>12-23</span>
+                                                    <h2>15:00</h2>
+                                                </div>
+                                                <div class="c-right">
+                                                    <ul class="c-r-nav">
+                                                        <li>萌妞嘎嘎</li>
+                                                        <li> <span>0</span> : <span>0</span> </li>
+                                                        <li>高手寂寞</li>
+                                                        <li><span>即将开始</span></li>
+                                                    </ul>
+                                                </div>
+                                            </li> -->
+                                        </ul>
+                                    </nav>
+                                </div>
+                                
+                                <div class="score"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="reward main">
+                    <img src="img/match-reward.jpg" width="100%" height="100%" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="to-top"></div>
+    <footer class="footer">
+        <ul>
+            <li><a href="index.html"><h2>资讯</h2><span>INDEX</span></a></li>
+            <li><a href="video.html"><h2>视频</h2><span>VIDEO</span></a></li>
+            <li class="on"><a href="match.html"><h2>赛事</h2><span>MATCH</span></a></li>
+        </ul>
+    </footer>
+    
+    <script src="js/match.js"></script>
+</body>
+</html>

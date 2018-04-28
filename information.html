@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="Author" content="onaway">
+    <script>
+        function browserRedirect() {
+            var sUserAgent = navigator.userAgent.toLowerCase();
+            var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+            var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+            var bIsMidp = sUserAgent.match(/midp/i) == "midp";
+            var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+            var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+            var bIsAndroid = sUserAgent.match(/android/i) == "android";
+            var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+            var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+            if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
+                window.location.href="isMobile.html";
+            }
+        }
+        browserRedirect();
+    </script>
+    <script>
+        (function(doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function() {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    docEl.style.fontSize = clientWidth / 7.5 + 'px';
+                };
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+    </script>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/information.css">
+</head>
+<body>
+    <div class="wrap clearfix">
+        <div class="left"></div>
+        <div class="right">
+            <div class="header">
+                <!-- <p>无敌美少女主播今日三国战纪极限竞技赛首秀，抗压如何反杀对手，精彩至极！</p>
+                <div class="time">
+                    <span>1月30日</span>
+                    <span>11:47</span>
+                    <span>219人看过</span>
+                </div> -->
+            </div>
+            <div class="container">
+                
+            </div>
+            <div class="logo clearfix">
+                <div class="qr-code">
+                    <span>官方微信：</span>
+                    <img src="img/qr-code1.jpg" alt="">
+                </div>
+                <div class="qr-code">
+                    <span>官方微博：</span>
+                    <img class="weibo" src="img/qr-code2.jpg" alt="">
+                </div>
+                <div class="contact clearfix">
+                    <img class="qq" src="img/contact.png" alt="">
+                    <div class="group">
+                        <p>客服QQ群号</p>
+                        <span>677593285</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="to-top"></div>
+    <footer class="footer">
+        <ul>
+            <li><a href="index.html"><h2>资讯</h2><span>INDEX</span></a></li>
+            <li><a href="video.html"><h2>视频</h2><span>VIDEO</span></a></li>
+            <li class="on"><a href="match.html"><h2>赛事</h2><span>MATCH</span></a></li>
+        </ul>
+    </footer>
+    <script src="js/3.2.1-jquery.js"></script>
+    <script>
+        //返回顶部
+        $(function(){
+            var $toTop = $(".to-top");
+            $(window).on('touchmove',function(e){
+                var top = $(document).scrollTop();
+                if( top>20 ){
+                    $toTop.fadeIn();
+                }else{
+                    $toTop.fadeOut();
+                }
+            });
+            $toTop.on('touchend',function () {
+                $("body,html").animate({
+                    scrollTop : 0
+                },300);
+                $(this).delay(300).fadeOut();
+            });
+        });
+
+        $(function(){
+            var $header = $('.header');
+            var $container = $('.container');
+
+            function getRequest() {
+                var url = window.location.search; //获取url中"?"符后的字串
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for(var i = 0; i < strs.length; i ++) {
+                        theRequest[strs[i].split("=")[0]]=decodeURI(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+
+            var id= getRequest().id;
+            var type = getRequest().type;
+
+            if (type === 'info') {
+                $.ajax({
+                    type:"post",
+                    url:"http://120.132.14.186:9002/index.php/Home/index/getcontent",
+                    data:{type:type,id:id},
+                    dataType:'json',
+                    success:function(data){
+                        var dayArr = [],
+                            hourArr = [];
+                        $.each(data,function(i,value){
+                            var reg = /-/;
+                            var time = value.time,
+                                tempArr = time.split(' '),
+                                dayArray = tempArr[0].split('/'),
+                                day = dayArray[0] + '/' + dayArray[1];
+                            dayArr.push(day);
+                            hourArr.push(tempArr[1]);
+                        })
+                        for( var i=0; i<data.length; i++ ){
+                            if( data[i].hasOwnProperty('desc') ){
+                                var $div1 = $('<p>'+data[i].title+'</p>\
+                                    <div class="time">\
+                                        <span>'+dayArr[i]+'</span>\
+                                        <span>'+hourArr[i]+'</span>\
+                                        <span>'+data[i].look+'人看过</span>\
+                                    </div>');
+                                var $div2 = $(""+data[i].desc+"");
+                            }
+                            $header.append($div1)
+                            $container.append($div2);
+                        }
+                        // $('blockquote').css('textIndent','2em');
+                        $('img').css('maxWidth','100%');
+                    }
+                });
+            }
+        })
+    </script>
+</body>
+</html>

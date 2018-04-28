@@ -1,0 +1,428 @@
+/*====竖屏====*/
+@media all and (orientation: portrait) {
+  .top-nav {
+    height: 0.48rem;
+  }
+  .top-nav ul li {
+    height: 0.46rem;
+  }
+  .top-nav ul li:nth-child(1) i {
+    width: 0.2rem;
+    height: 0.24rem;
+    margin-right: 0.05rem;
+  }
+  .top-nav ul li:nth-child(2) i {
+    width: 0.28rem;
+    height: 0.28rem;
+  }
+  .match {
+    margin-top: 0.05rem;
+  }
+  .match .main .swiper-pagination {
+    height: 0.4rem;
+  }
+  .match .main .swiper-pagination .swiper-pagination-bullet {
+    line-height: 0.4rem;
+  }
+  .match .main .container .c-nav .swiper-slide .content .rule {
+    padding: 0.5rem 0.4rem 0.48rem 0.36rem;
+  }
+  .match .main .container .c-nav .swiper-slide .content .rule p {
+    line-height: 1.8;
+  }
+  .competition-list {
+    padding: 0 0.15rem 0 0.09rem;
+  }
+  .competition-list .c-l-nav > li {
+    height: 0.9rem;
+  }
+  .competition-list .c-l-nav > li .c-left h2 {
+    margin-top: -0.05rem;
+  }
+  .competition-list .c-l-nav > li .c-right .c-r-nav > li {
+    font-size: 12px;
+    line-height: 0.9rem;
+  }
+  .competition-list .c-l-nav > li .c-right .c-r-nav > li:nth-child(4) span {
+    width: 1.11rem;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 0.08rem;
+  }
+  .score {
+    margin-top: 0.35rem;
+    margin-bottom: 56px;
+    padding: 0 0.22rem 2rem 0.2rem;
+  }
+  .score h1 {
+    font-size: 12px;
+    line-height: 0.6rem;
+  }
+  .score .s-con {
+    padding: 0.32rem 0 0.07rem 0;
+  }
+  .score .s-con p {
+    height: 0.45rem;
+    font-size: 12px;
+    line-height: 0.45rem;
+  }
+  .score .s-con .ranking-list ul li {
+    font-size: 11px;
+    height: 0.36rem;
+    line-height: 0.36rem;
+    margin-bottom: 0.13rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(1) {
+    padding-right: 0.1rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) {
+    padding: 0 0.1rem 0 0.1rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) em.first {
+    border-radius: 0.1rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) em.second {
+    border-radius: 0.1rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) em.third {
+    border-radius: 0.1rem;
+  }
+  .score .s-con .ranking-list ul li img {
+    width: 0.36rem;
+    height: 0.36rem;
+  }
+  .score .s-con .ranking-list ul li:first-child {
+    margin-top: 0.22rem;
+  }
+  .score .s-con .ranking-list ul li:last-child span:nth-child(1) {
+    padding-right: 0.06rem;
+  }
+  /*返回顶部按钮*/
+  .to-top {
+    display: none;
+    position: fixed;
+    right: 0.23rem;
+    bottom: 1.63rem;
+    width: 0.63rem;
+    height: 0.63rem;
+    background: url('../img/toTop.jpg') no-repeat left top / cover;
+    z-index: 99;
+  }
+}
+/*====横屏====*/
+@media all and (orientation: landscape) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .top-nav {
+    height: 6.4%;
+    margin-top: 1px;
+  }
+  .top-nav ul li {
+    height: 0.25842697rem;
+  }
+  .top-nav ul li:nth-child(1) i {
+    width: 0.11235955rem;
+    height: 0.13483146rem;
+    margin-right: 0.02808989rem;
+  }
+  .top-nav ul li:nth-child(2) i {
+    width: 0.15730337rem;
+    height: 0.15730337rem;
+  }
+  .match {
+    height: 90%;
+    margin-top: 1.5%;
+  }
+  .match .main {
+    height: 100%;
+  }
+  .match .main .tab {
+    height: 7.2%;
+  }
+  .match .main .tab p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .match .main .container {
+    height: 94.8%;
+    background: #e9e9e9;
+  }
+  .match .main .container .c-nav {
+    height: 100%;
+  }
+  .match .main .container .c-nav .swiper-slide {
+    height: 100%;
+  }
+  .match .main .container .c-nav .swiper-slide .content {
+    overflow: auto;
+    float: left;
+    width: 49.3%;
+    height: 100%;
+    background: #fff;
+  }
+  .match .main .container .c-nav .swiper-slide .content .rule {
+    padding: 0.14044944rem 0.06741573rem 0.14044944rem 0.11235955rem;
+  }
+  .match .main .container .c-nav .swiper-slide .content .rule p {
+    line-height: 1.5;
+  }
+  .competition-list {
+    padding: 0 0.12359551rem 0 0.12921348rem;
+  }
+  .competition-list .c-l-nav > li {
+    height: 0.39325843rem;
+  }
+  .competition-list .c-l-nav > li .c-left h2 {
+    margin-top: -0.02808989rem;
+  }
+  .competition-list .c-l-nav > li .c-right .c-r-nav > li {
+    font-size: 10px;
+    line-height: 0.39325843rem;
+  }
+  .competition-list .c-l-nav > li .c-right .c-r-nav > li:nth-child(4) span {
+    width: 0.47191011rem;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 0.04494382rem;
+  }
+  .score {
+    overflow: auto;
+    float: right;
+    box-sizing: border-box;
+    width: 49.3%;
+    height: 100%;
+    padding: 0 0.07303371rem 0 0.06741573rem;
+    background: #fff;
+  }
+  .score h1 {
+    font-size: 12px;
+    line-height: 0.28089888rem;
+  }
+  .score .s-con {
+    padding: 0.14606742rem 0 0.00561798rem 0;
+  }
+  .score .s-con p {
+    height: 0.16853933rem;
+    font-size: 10px;
+    line-height: 0.16853933rem;
+  }
+  .score .s-con .ranking-list ul li {
+    font-size: 9px;
+    height: 0.15730337rem;
+    line-height: 0.15730337rem;
+    margin-bottom: 0.04494382rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(1) {
+    padding-right: 0.05617978rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) {
+    padding: 0 0.05617978rem 0 0.05617978rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) em.first {
+    border-radius: 0.05617978rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) em.second {
+    border-radius: 0.05617978rem;
+  }
+  .score .s-con .ranking-list ul li span:nth-child(2) em.third {
+    border-radius: 0.05617978rem;
+  }
+  .score .s-con .ranking-list ul li img {
+    width: 0.15730337rem;
+    height: 0.15730337rem;
+  }
+  .score .s-con .ranking-list ul li:first-child {
+    margin-top: 0.10674157rem;
+  }
+  .score .s-con .ranking-list ul li:last-child span:nth-child(1) {
+    padding-right: 0.03370787rem;
+  }
+}
+/*====主体内容样式====*/
+.top-nav ul {
+  display: flex;
+  height: 100%;
+}
+.top-nav ul li {
+  display: flex;
+  width: 50%;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: 2px solid #7c7c7c;
+  background: #4a4a4a;
+  align-items: center;
+  justify-content: center;
+}
+.top-nav ul li i {
+  display: block;
+}
+.top-nav ul li:nth-child(1) {
+  margin-right: 2px;
+}
+.top-nav ul li:nth-child(1) i {
+  background: url('../img/schedule.png') no-repeat left top / cover;
+}
+.top-nav ul li:nth-child(2) i {
+  background: url('../img/reward.png') no-repeat left top / cover;
+}
+.top-nav ul li.on {
+  border-bottom: 2px solid #cb5858;
+  background: #222;
+}
+.match {
+  position: relative;
+}
+.match .main {
+  display: none;
+}
+.match .main .tab {
+  display: flex;
+  width: 100%;
+}
+.match .main .tab p {
+  width: 33.3%;
+  height: 100%;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  margin-right: 1px;
+  background: #222;
+}
+.match .main .tab p.active {
+  background: #ff5151;
+  width: 66.6%;
+}
+.match .main .tab p:last-child {
+  margin-right: 0px;
+}
+.match .main .container .c-nav .swiper-slide {
+  float: left;
+}
+.match .main .container .c-nav .swiper-slide .content .rule {
+  font-size: 11px;
+}
+.match .main .container .c-nav .swiper-slide .content .rule p {
+  text-align: justify;
+}
+.competition-list .c-l-nav > li {
+  background: #efefef;
+  border-bottom: 1px solid #cb5858;
+  margin-bottom: 1px;
+}
+.competition-list .c-l-nav > li .c-left {
+  float: left;
+  display: flex;
+  width: 23%;
+  height: 100%;
+  background: #cb5858;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.competition-list .c-l-nav > li .c-left span {
+  font-size: 11px;
+  color: #fcd1d1;
+}
+.competition-list .c-l-nav > li .c-left h2 {
+  font-size: 15px;
+  color: #fff;
+}
+.competition-list .c-l-nav > li .c-right {
+  float: right;
+  width: 77%;
+  height: 100%;
+}
+.competition-list .c-l-nav > li .c-right .c-r-nav {
+  height: 100%;
+}
+.competition-list .c-l-nav > li .c-right .c-r-nav > li {
+  float: left;
+  width: 25%;
+  height: 100%;
+  color: #595959;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.competition-list .c-l-nav > li .c-right .c-r-nav > li:nth-child(1) {
+  width: 30%;
+}
+.competition-list .c-l-nav > li .c-right .c-r-nav > li:nth-child(2) {
+  width: 15%;
+}
+.competition-list .c-l-nav > li .c-right .c-r-nav > li:nth-child(3) {
+  width: 30%;
+}
+.competition-list .c-l-nav > li .c-right .c-r-nav > li:nth-child(4) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.competition-list .c-l-nav > li .c-right .c-r-nav > li:nth-child(4) span {
+  display: block;
+  font-size: 11px;
+  text-align: center;
+  background: #cecece;
+}
+.score h1 {
+  color: #313131;
+}
+.score .s-con {
+  background: #e9e9e9;
+}
+.score .s-con p {
+  display: flex;
+  color: #fff;
+  background: #cb5858;
+}
+.score .s-con p span {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+.score .s-con p span:nth-child(1) {
+  width: 10%;
+  text-align: right;
+}
+.score .s-con p span:nth-child(4),
+.score .s-con p span:nth-child(5) {
+  width: 20%;
+}
+.score .s-con .ranking-list ul > li {
+  color: #272727;
+  text-align: center;
+}
+.score .s-con .ranking-list ul > li span {
+  float: left;
+  width: 25%;
+}
+.score .s-con .ranking-list ul > li span:nth-child(1) {
+  box-sizing: border-box;
+  width: 10%;
+  text-align: right;
+}
+.score .s-con .ranking-list ul > li span:nth-child(2) {
+  box-sizing: border-box;
+}
+.score .s-con .ranking-list ul > li span:nth-child(2) em {
+  display: block;
+  height: 100%;
+}
+.score .s-con .ranking-list ul > li span:nth-child(2) em.first {
+  background-image: -webkit-linear-gradient(#ff0, #efdd00, #ddb300);
+}
+.score .s-con .ranking-list ul > li span:nth-child(2) em.second {
+  background-image: -webkit-linear-gradient(#e4e4e4, #d2d2d2, #c0c0c0);
+}
+.score .s-con .ranking-list ul > li span:nth-child(2) em.third {
+  background-image: -webkit-linear-gradient(#fea600, #e58900, #cc6a00);
+}
+.score .s-con .ranking-list ul > li span:nth-child(4),
+.score .s-con .ranking-list ul > li span:nth-child(5) {
+  width: 20%;
+}

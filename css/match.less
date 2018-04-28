@@ -1,0 +1,557 @@
+@rem1: 100rem;
+@rem2: 178rem;
+
+/*====竖屏====*/
+@media all and (orientation: portrait) {
+    .top-nav{
+        height: 48/@rem1;
+        ul{
+            li{
+                height: 46/@rem1;
+                &:nth-child(1){
+                    i{
+                        width: 20/@rem1;
+                        height: 24/@rem1;
+                        margin-right: 5/@rem1;
+                    }
+                }
+                &:nth-child(2){
+                    i{
+                        width: 28/@rem1;
+                        height: 28/@rem1;
+                    }
+                }
+            }
+        }
+    }
+  
+    .match{
+        margin-top: 5/@rem1;
+        .main{
+            .swiper-pagination{
+                height: 40/@rem1;
+                .swiper-pagination-bullet{
+                    // width: 249/@rem1;
+                    line-height: 40/@rem1;
+                }
+            }
+        
+            .container{
+                .c-nav{
+                    .swiper-slide{
+                        .content{
+                            .rule{
+                                padding: 50/@rem1 40/@rem1 48/@rem1 36/@rem1;
+                                p{
+                                    line-height: 1.8;
+                                }
+                            } 
+                        } 
+                    }
+                }
+            }
+        }
+    }
+
+    //赛程列表
+    .competition-list{
+        padding: 0 15/@rem1 0 9/@rem1;
+        .c-l-nav{
+            >li{
+                height: 90/@rem1;
+                .c-left{
+                    h2{
+                        margin-top: -5/@rem1;
+                    }
+                }
+                .c-right{
+                    .c-r-nav{
+                        >li{
+                            font-size: 12px;
+                            line-height: 90/@rem1;
+                            &:nth-child(4){
+                                span{
+                                    width: 111/@rem1;
+                                    // height: 27/@rem1;
+                                    // line-height: 27/@rem1;
+                                    height: 20px;
+                                    line-height: 20px;
+                                    border-radius: 8/@rem1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //赛事积分
+    .score{
+        margin-top: 35/@rem1;
+        margin-bottom: 56px;
+        padding: 0 22/@rem1 200/@rem1 20/@rem1;
+        h1{
+            font-size: 12px;
+            line-height: 60/@rem1;
+        }
+        .s-con{
+            padding: 32/@rem1 0 7/@rem1 0;
+            p{
+                height: 45/@rem1;
+                font-size: 12px;
+                line-height: 45/@rem1;
+            }
+            .ranking-list{
+                ul{
+                    li{
+                        font-size: 11px;
+                        height: 36/@rem1;
+                        line-height: 36/@rem1;
+                        margin-bottom: 13/@rem1;
+                        span{
+                            &:nth-child(1){
+                                padding-right: 10/@rem1;
+                            }
+                            &:nth-child(2){
+                                padding: 0 10/@rem1 0 10/@rem1;
+                                em{
+                                    &.first{
+                                        border-radius: 10/@rem1;
+                                    }
+                                    &.second{
+                                        border-radius: 10/@rem1;
+                                    }
+                                    &.third{
+                                        border-radius: 10/@rem1;
+                                    }
+                                }
+                            }
+                        }
+                        img{
+                            width: 36/@rem1;
+                            height: 36/@rem1;
+                        }
+                        &:first-child{
+                            margin-top: 22/@rem1;
+                        }
+                        &:last-child{
+                            span{
+                                &:nth-child(1){
+                                    padding-right: 6/@rem1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+     /*返回顶部按钮*/
+     .to-top{
+        display: none;
+        position: fixed;
+        right: 23/@rem1;
+        bottom: 163/@rem1;
+        width: 63/@rem1;
+        height: 63/@rem1;
+        background: url('../img/toTop.jpg')no-repeat left top/cover;
+        z-index: 99;
+    }
+}
+
+/*====横屏====*/
+@media all and (orientation: landscape) {
+    html,body{
+        width: 100%;
+        height: 100%;
+    }
+
+    .top-nav{
+        // height: 48/@rem2;
+        height: 6.4%;
+        margin-top: 1px;
+        ul{
+            li{
+                height: 46/@rem2;
+                &:nth-child(1){
+                    i{
+                        width: 20/@rem2;
+                        height: 24/@rem2;
+                        margin-right: 5/@rem2;
+                    }
+                }
+                &:nth-child(2){
+                    i{
+                        width: 28/@rem2;
+                        height: 28/@rem2;
+                    }
+                }
+            }
+        }
+    }
+
+    .match{
+        height: 90%;
+        margin-top: 1.5%;
+        // margin-top: 8/@rem2;
+        .main{
+            height: 100%;
+            .tab{
+                // height: 36/@rem2;
+                height: 7.2%;
+                // height: 10%;
+                p{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    // width: 406/@rem2;
+                    // line-height: 33/@rem2;
+                }
+            }
+        
+            .container{
+                height: 94.8%;
+                background: #e9e9e9;
+                .c-nav{
+                    height: 100%;
+                    .swiper-slide{
+                        height: 100%;
+                        .content{
+                            overflow: auto;
+                            float: left;
+                            width: 49.3%;
+                            height: 100%;
+                            background: #fff;
+                            .rule{
+                                padding: 25/@rem2 12/@rem2 25/@rem2 20/@rem2;
+                                p{
+                                    line-height: 1.5;
+                                }
+                            }  
+                        } 
+                    }
+                } 
+            }
+        }
+    }
+
+    //赛程列表
+    .competition-list{
+        padding: 0 22/@rem2 0 23/@rem2;
+        .c-l-nav{
+            >li{
+                height: 70/@rem2;
+                .c-left{
+                    h2{
+                        margin-top: -5/@rem2;
+                    }
+                }
+                .c-right{
+                    .c-r-nav{
+                        >li{
+                            font-size: 10px;
+                            line-height: 70/@rem2;
+                            &:nth-child(4){
+                                span{
+                                    width: 84/@rem2;
+                                    // height: 20/@rem2;
+                                    // line-height: 20/@rem2;
+                                    height: 18px;
+                                    line-height: 18px;
+                                    border-radius: 8/@rem2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //赛事积分
+    .score{
+        overflow: auto;
+        float: right;
+        box-sizing: border-box;
+        width: 49.3%;
+        height: 100%;
+        padding: 0 13/@rem2 0 12/@rem2;
+        background: #fff;
+        h1{
+            font-size: 12px;
+            line-height: 50/@rem2;
+        }
+        .s-con{
+            padding: 26/@rem2 0 1/@rem2 0;
+            p{
+                height: 30/@rem2;
+                font-size: 10px;
+                line-height: 30/@rem2;
+            }
+            .ranking-list{
+                ul{
+                    li{
+                        font-size: 9px;
+                        height: 28/@rem2;
+                        line-height: 28/@rem2;
+                        margin-bottom: 8/@rem2;
+                        span{
+                            &:nth-child(1){
+                                padding-right: 10/@rem2;
+                            }
+                            &:nth-child(2){
+                                padding: 0 10/@rem2 0 10/@rem2;
+                                em{
+                                    &.first{
+                                        border-radius: 10/@rem2;
+                                    }
+                                    &.second{
+                                        border-radius: 10/@rem2;
+                                    }
+                                    &.third{
+                                        border-radius: 10/@rem2;
+                                    }
+                                }
+                            }
+                        }
+                        img{
+                            width: 28/@rem2;
+                            height: 28/@rem2;
+                        }
+                        &:first-child{
+                            margin-top: 19/@rem2;
+                        }
+                        &:last-child{
+                            span{
+                                &:nth-child(1){
+                                    padding-right: 6/@rem2;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/*====主体内容样式====*/
+.top-nav{
+    ul{
+        display: flex;
+        height: 100%;
+        li{
+            display: flex;
+            width: 50%;
+            font-size: 12px;
+            color: #fff;
+            border-bottom: 2px solid #7c7c7c;
+            background: #4a4a4a;
+            align-items: center;
+            justify-content: center;
+            i{
+                display: block;
+            }
+            &:nth-child(1){
+                margin-right: 2px;
+                i{
+                    background: url('../img/schedule.png')no-repeat left top/cover;
+                }
+            }
+            &:nth-child(2){
+                i{
+                    background: url('../img/reward.png')no-repeat left top/cover;
+                }
+            }
+            &.on{
+                border-bottom: 2px solid #cb5858;
+                background: #222;
+            }
+        }
+    }
+}
+
+.match{
+    position: relative;
+    .main{
+        display: none;
+        .tab{
+            display: flex;
+            width: 100%;
+            p{
+                // flex: 1;
+                width: 33.3%;
+                height: 100%;
+                font-size: 12px;
+                color: #fff;
+                text-align: center;
+                margin-right: 1px;
+                background: #222;
+                &.active{
+                    background: #ff5151;
+                    width: 66.6%;
+                }
+                &:last-child{
+                    margin-right: 0px;
+                }
+            }
+        }
+        
+        .container{
+            // overflow: visible;
+            .c-nav{
+                // width: 300%;
+                .swiper-slide{
+                    float: left;
+                    // width: 33.33%;
+                    .content{
+                        .rule{
+                            font-size: 11px;
+                            p{
+                                text-align: justify;
+                            }
+                        } 
+                    }  
+                }
+            }
+        }
+    }
+}
+
+//赛程列表
+.competition-list{
+    .c-l-nav{
+        >li{
+            background: #efefef;
+            border-bottom: 1px solid #cb5858;
+            margin-bottom: 1px;
+            .c-left{
+                float: left;
+                display: flex;
+                width: 23%;
+                height: 100%;
+                background: #cb5858;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                span{
+                    font-size: 11px;
+                    color: #fcd1d1;
+                }
+                h2{
+                    font-size: 15px;
+                    color: #fff;
+                }
+            }
+            .c-right{
+                float: right;
+                width: 77%;
+                height: 100%;
+                .c-r-nav{
+                    height: 100%;
+                    >li{
+                        float: left;
+                        width: 25%;
+                        height: 100%;
+                        color: #595959;
+                        text-align: center;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        &:nth-child(1){
+                            width: 30%;
+                        }
+                        &:nth-child(2){
+                            width: 15%;
+                        }
+                        &:nth-child(3){
+                            width: 30%;
+                        }
+                        &:nth-child(4){
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            span{
+                                display: block;
+                                font-size: 11px;
+                                text-align: center;
+                                background: #cecece;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//赛事积分
+.score{
+    h1{
+        color: #313131;
+    }
+    .s-con{
+        background: #e9e9e9;
+        p{
+            display: flex;
+            color: #fff;
+            background: #cb5858;
+            span{
+                display: inline-block;
+                width: 25%;
+                text-align: center;
+                &:nth-child(1){
+                    width: 10%;
+                    text-align: right;
+                }
+                &:nth-child(4),&:nth-child(5){
+                    width: 20%;
+                }
+            }
+        }
+        .ranking-list{
+            ul{
+                >li{
+                    color: #272727;
+                    text-align: center;
+                    span{
+                        float: left;
+                        width: 25%;
+                        &:nth-child(1){
+                            box-sizing: border-box;
+                            width: 10%;
+                            text-align: right;
+                        }
+                        &:nth-child(2){
+                            box-sizing: border-box;
+                            em{
+                                display: block;
+                                height: 100%;
+                                &.first{
+                                    background-image: -webkit-linear-gradient(#ff0,#efdd00,#ddb300);
+                                }
+                                &.second{
+                                    background-image: -webkit-linear-gradient(#e4e4e4,#d2d2d2,#c0c0c0);
+                                }
+                                &.third{
+                                    background-image: -webkit-linear-gradient(#fea600,#e58900,#cc6a00);
+                                }
+                            }
+                        }
+                        &:nth-child(4),&:nth-child(5){
+                            width: 20%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

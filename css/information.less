@@ -1,0 +1,160 @@
+@rem1: 100rem;
+@rem2: 178rem;
+
+/*====竖屏====*/
+@media all and (orientation: portrait) {
+    .right{
+        .header{
+            margin: 0 9/@rem1;
+            padding: 20/@rem1 20/@rem1;
+            .time{
+                margin-top: 5/@rem1;
+                span{
+                    &:nth-child(2){
+                        margin: 0 23/@rem1 0 15/@rem1;
+                    }
+                }
+            }
+        }
+        .container{
+            padding: 25/@rem1 32/@rem1;
+        }
+        
+        .logo{
+            margin: 0 0 60px 124/@rem1;
+            .qr-code{
+                text-indent: 5/@rem1;
+                margin: 10/@rem1 50/@rem1 0 0;
+                img{
+                    width: 100/@rem1;
+                    height: 100/@rem1;
+                    &.weibo{
+                        margin-top: 5/@rem1;
+                    }
+                }
+            }
+            .contact{
+                margin-top: 60/@rem1;
+                img{
+                    width: 44/@rem1;
+                    height: 44/@rem1;
+                    margin: 10/@rem1 15/@rem1 0 0;
+                }
+            }
+        }
+    }
+
+    .to-top{
+        right: 23/@rem1;
+        bottom: 163/@rem1;
+        width: 63/@rem1;
+        height: 63/@rem1;
+    }
+}
+
+/*====横屏====*/
+@media all and (orientation: landscape) {
+    .right{
+        .header{
+            margin: 0 9/@rem2;
+            padding: 15/@rem2 20/@rem2;
+            .time{
+                margin-top: 5/@rem2;
+                span{
+                    &:nth-child(2){
+                        margin: 0 23/@rem2 0 15/@rem2;
+                    }
+                }
+            }
+        }
+        .container{
+            padding: 25/@rem2 32/@rem2;
+        }
+        
+        .logo{
+            margin-left:360/@rem2;
+            .qr-code{
+                text-indent: 5/@rem2;
+                margin: 10/@rem2 50/@rem2 0 0;
+                img{
+                    width: 100/@rem2;
+                    height: 100/@rem2;
+                    &.weibo{
+                        margin-top: 5/@rem2;
+                    }
+                }
+            }
+            .contact{
+                margin-top: 60/@rem2;
+                img{
+                    width: 44/@rem2;
+                    height: 44/@rem2;
+                    margin: 10/@rem2 15/@rem2 0 0;
+                }
+            }
+        }
+    }
+
+    .to-top{
+        right: 30/@rem2;
+        bottom: 50/@rem2;
+        width: 80/@rem2;
+        height: 80/@rem2;
+    }
+}
+
+/*====主体内容样式====*/
+.header{
+    border-bottom: 1px solid #c0c0c0;
+    p{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+    .time{
+        font-size: 10px;
+        color: #a8a8a8;
+    }
+}
+
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    word-wrap:break-word;
+    text-align: justify;
+}
+
+.logo{
+    .qr-code{
+        float: left;
+        font-size: 10px;
+        &:last-child{
+            text-indent: 0;
+        }
+        img{
+            display: block;
+        }
+    }
+    .contact{
+        float: left;
+        img{
+            float: left;
+        }
+        .group{
+            float: left;
+            font-size: 10px;
+            span{
+                font-size: 12px;
+                color: #f00;
+            }
+        }
+    }
+}
+
+/*返回顶部按钮*/
+.to-top{
+    // display: none;
+    position: fixed;
+    background: url('../img/toTop.jpg')no-repeat left top/cover;
+}

@@ -1,0 +1,123 @@
+/*====字体适配====*/
+@media screen and (max-width: 321px) {
+  body {
+    font-size: 15px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 400px) {
+  body {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 400px) {
+  body {
+    font-size: 18px;
+  }
+}
+/*====竖屏====*/
+@media all and (orientation: portrait) {
+  .wrap .left {
+    width: 0;
+    height: 100%;
+  }
+  .wrap .right {
+    width: 100%;
+  }
+  .footer {
+    bottom: 0;
+    width: 100%;
+    height: 56px;
+  }
+  .footer ul {
+    display: flex;
+  }
+  .footer ul li {
+    box-sizing: border-box;
+    width: 33.33%;
+    height: 100%;
+    border-left: 1px solid #fff;
+  }
+  .footer ul li:last-child {
+    border-right: 1px solid #fff;
+  }
+  .footer ul li a span {
+    margin-top: 0.05rem;
+  }
+}
+/*====横屏====*/
+@media all and (orientation: landscape) {
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+  }
+  .wrap .left {
+    width: 8.4%;
+    height: 100%;
+  }
+  .wrap .right {
+    width: 91.6%;
+  }
+  .footer {
+    top: 0;
+    width: 8.4%;
+    height: 100%;
+  }
+  .footer ul li {
+    box-sizing: border-box;
+    width: 100%;
+    height: 33.33%;
+    border-top: 1px solid #fff;
+  }
+  .footer ul li:last-child {
+    border-bottom: 1px solid #fff;
+  }
+  .footer ul li a span {
+    margin-top: 0.05617978rem;
+  }
+}
+/*====主体内容样式====*/
+.wrap {
+  width: 100%;
+  height: 100%;
+}
+.wrap .left {
+  float: left;
+}
+.wrap .right {
+  float: right;
+  height: 100%;
+}
+.wrap .right i {
+  display: block;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  z-index: 999;
+}
+.footer ul {
+  width: 100%;
+  height: 100%;
+}
+.footer ul li {
+  background: #000;
+}
+.footer ul li.on {
+  background: #bf2828;
+}
+.footer ul li a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.footer ul li a h2 {
+  font-size: 12px;
+}
+.footer ul li a span {
+  font-size: 6px;
+}
